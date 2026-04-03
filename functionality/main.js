@@ -23,8 +23,55 @@ const accMenu = document.getElementById('acc-menu');
 const accToggleBtn = document.getElementById('acc-toggle-btn');
 let currentFontSize = 1;
 accToggleBtn.addEventListener('click', () => {
+    const isExpanded = accToggleBtn.getAttribute('aria-expanded') === 'true';
+    accToggleBtn.setAttribute('aria-expanded', !isExpanded);
     accMenu.classList.toggle('open');
+    if (!isExpanded) {
+        const firstBtn = accMenu.querySelector('button');
+        if (firstBtn) firstBtn.focus();
+    }
 });
+
+accMenu.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        accMenu.classList.remove('open');
+        accToggleBtn.setAttribute('aria-expanded', 'false');
+        accToggleBtn.focus();
+    }
+    if (e.key === 'Tab') {
+        const focusableElements = accMenu.querySelectorAll('button');
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey) {
+            if (document.activeElement === firstElement) {
+                lastElement.focus();
+                e.preventDefault();
+            }
+        } else {
+            if (document.activeElement === lastElement) {
+                firstElement.focus();
+                e.preventDefault();
+            }
+        }
+    }
+});
+
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !isExpanded);
+        navLinks.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            navLinks.classList.remove('active');
+        });
+    });
+}
 
 function accChangeFontSize(step) {
     currentFontSize += step;
@@ -43,12 +90,8 @@ function accReset() {
 }
 
 function showToast(message, type = 'success') {
-    let container = document.querySelector('.toast-container');
-    if (!container) {
-        container = document.createElement('div');
-        container.className = 'toast-container';
-        document.body.appendChild(container);
-    }
+    const container = document.getElementById('toast-container');
+    if (!container) return;
 
     const toast = document.createElement('div');
     toast.className = `toast ${type}`;
@@ -65,9 +108,6 @@ function showToast(message, type = 'success') {
 
     setTimeout(() => {
         toast.remove();
-        if (container.childNodes.length === 0) {
-            container.remove();
-        }
     }, 5000);
 }
 
@@ -128,9 +168,6 @@ if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        const kp1 = "a5a933e8-5fa9-4cde-92";
-        const kp2 = "ff-bf822f5c2e7d";
-
         let hiddenKey = document.querySelector('input[name="access_key"]');
         if (!hiddenKey) {
             hiddenKey = document.createElement('input');
@@ -138,7 +175,7 @@ if (contactForm) {
             hiddenKey.name = 'access_key';
             contactForm.appendChild(hiddenKey);
         }
-        hiddenKey.value = kp1 + kp2;
+        hiddenKey.value = "a5a933e8-5fa9-4cde-92ff-bf822f5c2e7d";
 
         const formData = new FormData(contactForm);
         const submitBtn = contactForm.querySelector('button[type="submit"]');
@@ -161,22 +198,18 @@ if (contactForm) {
 
                     setTimeout(() => {
                         contactForm.reset();
-                        contactForm.classList.remove('submitting');
                         const countDisplay = document.getElementById('char-count');
                         if (countDisplay) countDisplay.textContent = '0 / 200';
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
                     }, 5000);
                 } else {
-                    contactForm.classList.remove('submitting');
                     showToast('אירעה שגיאה בשליחת ההודעה, אנא נסה שנית.', 'error');
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
                 }
             })
             .catch(error => {
-                contactForm.classList.remove('submitting');
                 showToast('אירעה בעיית תקשורת, אנא נסה שנית.', 'error');
+            })
+            .finally(() => {
+                contactForm.classList.remove('submitting');
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
             });
