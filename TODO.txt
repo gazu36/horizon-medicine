@@ -1,0 +1,8 @@
+TODO List - Horizon Medicine Website
+
+[ ] 1. Meta Author: Update `<meta name="author" content="שם המטפל">` in the `<head>` of index.html to your actual name (e.g., "אופק").
+[ ] 2. About Image: Replace the placeholder `<span>תמונה של המטפל</span>` in the About section with an actual `<img src="...">` of yourself.
+[ ] 3. Footer Phone Number: Update the dummy phone number `050-0000000`.
+[ ] 4. Footer Address: Update the dummy address `רחוב הריפוי 10, תל אביב`.
+[ ] 5. Footer Company Name (Optional): You might want to update "רפואה סינית מסורתית" in the copyright to your specific clinic's name.
+[ ] 6. Contact Form Backend: Register for a free form provider like Formspree (formspree.io) and add their URL to your form so you can receive emails. Example: `<form action="https://formspree.io/f/YOUR_ID" method="POST">`.
