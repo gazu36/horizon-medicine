@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="קליניקה לרפואה סינית מסורתית. דיקור סיני, צמחי מרפא, מגע וטיפולים מותאמים אישית. החזרת האיזון לגוף ולנפש.">
+    <meta name="keywords"
+        content="רפואה סינית, דיקור סיני, צמחי מרפא, טווינא, כוסות רוח, מטפל ברפואה סינית, איזון גוף ונפש">
+    <title>רפואה סינית ואיזון הגוף והנפש</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-dark: #161d2f;
+            --accent-gold: #dfba83;
+            --text-light: #f4f4f4;
+            --text-dark: #333333;
+            --card-bg: #1f2a40;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* הגדרת גודל בסיס לטובת הגדלת/הקטנת טקסט */
+        html {
+            font-size: 100%;
+            transition: font-size 0.3s;
+        }
+
+        body {
+            font-family: 'Heebo', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: radial-gradient(circle at center, #232d45 0%, var(--primary-dark) 100%);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            color: #ccc;
+        }
+
+        .btn {
+            padding: 12px 35px;
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background-color: transparent;
+            color: var(--accent-gold);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* --- Sections General --- */
+        section {
+            padding: 5rem 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-gold);
+            margin: 10px auto 0;
+        }
+
+        /* --- About Section --- */
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background-color: #2a3652;
+            border: 2px solid var(--accent-gold);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+        }
+
+        /* --- Services Section --- */
+        .services {
+            background-color: #121826;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 3px solid var(--accent-gold);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* --- Contact Section --- */
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input,
+        textarea {
+            padding: 15px;
+            background-color: var(--card-bg);
+            border: 1px solid #33405c;
+            color: var(--text-light);
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        button[type="submit"] {
+            padding: 15px;
+            background-color: var(--accent-gold);
+            border: none;
+            font-weight: bold;
+            color: var(--primary-dark);
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #c9a572;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #0f1420;
+            font-size: 0.9rem;
+            color: #888;
+            border-top: 1px solid #2a3652;
+        }
+
+        /* --- Animations --- */
+        .hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================================
+           תפריט נגישות - עיצוב הווידג'ט
+           ========================================= */
+        #acc-widget {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 9999;
+            font-family: Arial, sans-serif;
+        }
+
+        #acc-toggle-btn {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            border: none;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+
+        #acc-toggle-btn:hover {
+            transform: scale(1.1);
+        }
+
+        #acc-menu {
+            display: none;
+            position: absolute;
+            bottom: 70px;
+            left: 0;
+            background-color: #fff;
+            color: #333;
+            border-radius: 10px;
+            padding: 15px;
+            width: 220px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: right;
+        }
+
+        #acc-menu.open {
+            display: block;
+        }
+
+        #acc-menu h4 {
+            margin-bottom: 15px;
+            text-align: center;
+            color: #333;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 5px;
+        }
+
+        .acc-option-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f4f4f4;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            text-align: right;
+            transition: background 0.2s;
+        }
+
+        .acc-option-btn:hover {
+            background-color: #e2e2e2;
+        }
+
+        /* --- מחלקות נגישות לפעולה (משנות את האתר) --- */
+
+        /* ניגודיות גבוהה */
+        body.acc-high-contrast {
+            background-color: #000 !important;
+            color: #fff !important;
+        }
+
+        body.acc-high-contrast section,
+        body.acc-high-contrast .hero,
+        body.acc-high-contrast footer,
+        body.acc-high-contrast .service-card,
+        body.acc-high-contrast input,
+        body.acc-high-contrast textarea {
+            background-color: #000 !important;
+            color: #ffcc00 !important;
+            border-color: #ffcc00 !important;
+        }
+
+        body.acc-high-contrast h1,
+        body.acc-high-contrast h2,
+        body.acc-high-contrast h3,
+        body.acc-high-contrast a,
+        body.acc-high-contrast .logo {
+            color: #fff !important;
+        }
+
+        /* הדגשת קישורים */
+        body.acc-highlight-links a {
+            background-color: yellow !important;
+            color: black !important;
+            text-decoration: underline !important;
+            font-weight: bold !important;
+            padding: 2px;
+        }
+
+        /* גופן קריא */
+        body.acc-readable-font * {
+            font-family: Arial, Helvetica, sans-serif !important;
+            letter-spacing: 1px !important;
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .about-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#" class="logo">רפואה סינית</a>
+        <ul class="nav-links">
+            <li><a href="#about">אודות</a></li>
+            <li><a href="#services">טיפולים</a></li>
+            <li><a href="#contact">צור קשר</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1 class="hidden">איזון הגוף, הרגעת הנפש</h1>
+        <p class="hidden">רפואה סינית מסורתית המותאמת לאורח החיים המודרני. דיקור, צמחי מרפא ותזונה לחיים בריאים יותר.
+        </p>
+        <a href="#contact" class="btn hidden">תיאום טיפול</a>
+    </header>
+
+    <section id="about">
+        <h2 class="section-title hidden">הגישה שלי</h2>
+        <div class="about-container">
+            <div class="about-image hidden">
+                <span>תמונה של המטפל</span>
+            </div>
+            <div class="about-text hidden">
+                <h3>שלום, שמי אופק</h3>
+                <br>
+                <p>כמטפל ברפואה סינית, אני מאמין ביכולת הטבעית של הגוף לרפא את עצמו. בקליניקה שלי אני משלב ידע עתיק
+                    יומין עם הבנה מעמיקה של הצרכים המודרניים.</p>
+                <br>
+                <p>הטיפול מתמקד בשורש הבעיה ולא רק בסימפטומים, תוך שימוש בדיקור, צמחי מרפא והנחיות תזונה מותאמות אישית.
+                    המטרה שלי היא לעזור לך להחזיר את האיזון לחייך ולהרגיש במיטבך.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2 class="section-title hidden">סוגי טיפולים</h2>
+        <div class="services-grid">
+            <div class="service-card hidden">
+                <div class="service-icon">✦</div>
+                <h3>דיקור סיני (Acupuncture)</h3>
+                <p>שימוש במחטים עדינות לאיזון זרימת הצ'י בגוף, הקלה על כאבים וטיפול בבעיות פנימיות.</p>
+            </div>
+            <div class="service-card hidden">
+                <div class="service-icon">🌿</div>
+                <h3>צמחי מרפא</h3>
+                <p>פורמולות צמחים המותאמות אישית לחיזוק המערכת החיסונית וטיפול במגוון רחב של סימפטומים.</p>
+            </div>
+            <div class="service-card hidden">
+                <div class="service-icon">☯</div>
+                <h3>טווינא וכוסות רוח</h3>
+                <p>טיפולי מגע ושיטות מסורתיות לשחרור שרירים תפוסים, הזרמת דם והפגת מתחים.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title hidden">תיאום פגישה</h2>
+        <div class="contact-container hidden">
+            <p style="text-align: center; margin-bottom: 20px;">השאירו פרטים ואחזור אליכם בהקדם לתיאום תור.</p>
+            <form>
+                <input type="text" placeholder="שם מלא" required>
+                <input type="tel" placeholder="טלפון" required>
+                <textarea rows="5" placeholder="הודעה או סיבת הפנייה"></textarea>
+                <button type="submit">שליחת הודעה</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 רפואה סינית מסורתית. כל הזכויות שמורות.</p>
+        <p>רחוב הריפוי 10, תל אביב | 050-0000000</p>
+    </footer>
+
+    <div id="acc-widget">
+        <button id="acc-toggle-btn" aria-label="פתיחת תפריט נגישות" title="נגישות">♿</button>
+        <div id="acc-menu" role="dialog" aria-label="אפשרויות נגישות">
+            <h4>תפריט נגישות</h4>
+            <button class="acc-option-btn" onclick="accChangeFontSize(0.1)">הגדלת טקסט ➕</button>
+            <button class="acc-option-btn" onclick="accChangeFontSize(-0.1)">הקטנת טקסט ➖</button>
+            <button class="acc-option-btn" onclick="accToggleClass('acc-high-contrast')">ניגודיות גבוהה 🌗</button>
+            <button class="acc-option-btn" onclick="accToggleClass('acc-highlight-links')">הדגשת קישורים 🔗</button>
+            <button class="acc-option-btn" onclick="accToggleClass('acc-readable-font')">גופן קריא 🔤</button>
+            <button class="acc-option-btn" onclick="accReset()"
+                style="background-color: #ffdada; border-color: #ffaaaa; margin-top: 15px;">איפוס הגדרות 🔄</button>
+        </div>
+    </div>
+
+    <script>
+        // אנימציות גלילה מקוריות
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // =========================================
+        // פונקציות תפריט הנגישות (JavaScript)
+        // =========================================
+        const accMenu = document.getElementById('acc-menu');
+        const accToggleBtn = document.getElementById('acc-toggle-btn');
+        let currentFontSize = 1;
+
+        // פתיחה וסגירה של התפריט
+        accToggleBtn.addEventListener('click', () => {
+            accMenu.classList.toggle('open');
+        });
+
+        // פונקציה להגדלה/הקטנה של טקסט
+        function accChangeFontSize(step) {
+            currentFontSize += step;
+            // הגבלת הגודל כדי שהאתר לא יישבר
+            if (currentFontSize < 0.8) currentFontSize = 0.8;
+            if (currentFontSize > 1.5) currentFontSize = 1.5;
+            document.documentElement.style.fontSize = (currentFontSize * 100) + '%';
+        }
+
+        // פונקציה להפעלת/כיבוי מחלקות עיצוב (ניגודיות, פונט, קישורים)
+        function accToggleClass(className) {
+            document.body.classList.toggle(className);
+        }
+
+        // איפוס כל הגדרות הנגישות למצב ברירת המחדל
+        function accReset() {
+            document.body.classList.remove('acc-high-contrast', 'acc-highlight-links', 'acc-readable-font');
+            currentFontSize = 1;
+            document.documentElement.style.fontSize = '100%';
+        }
+    </script>
+</body>
+
+</html>
