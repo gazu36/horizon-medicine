@@ -1,4 +1,4 @@
-﻿// אנימציות גלילה מקוריות
+// אנימציות גלילה מקוריות
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -50,4 +50,19 @@ function accReset() {
     document.body.classList.remove('acc-high-contrast', 'acc-highlight-links', 'acc-readable-font');
     currentFontSize = 1;
     document.documentElement.style.fontSize = '100%';
+}
+
+// =========================================
+// מונה תווים לטופס יצירת קשר
+// =========================================
+const reasonText = document.getElementById('reason-text');
+const charCount = document.getElementById('char-count');
+
+if (reasonText && charCount) {
+    reasonText.addEventListener('input', () => {
+        const length = reasonText.value.length;
+        charCount.textContent = `${length} / 200`;
+        // הצגת צבע אדום ברגע שמתקרבים לגבול (אופציה לעיצוב יפה)
+        charCount.style.color = length >= 200 ? '#ff8e8e' : '#aaa';
+    });
 }
