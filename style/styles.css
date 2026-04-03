@@ -117,7 +117,7 @@ nav {
 
 
 section {
-    padding: 2.5rem 10%;
+    padding: 2.5rem 5rem 10%;
 }
 
 .section-title {
@@ -271,8 +271,8 @@ textarea:not(:placeholder-shown):valid {
     text-align: right;
 }
 
-input.is-invalid ~ .error-msg,
-textarea.is-invalid ~ .error-msg {
+input.is-invalid~.error-msg,
+textarea.is-invalid~.error-msg {
     max-height: 20px;
     opacity: 1;
     margin-top: 5px;
@@ -478,9 +478,46 @@ body.acc-readable-font * {
     display: none;
     background: none;
     border: none;
-    color: var(--text-light);
-    font-size: 2rem;
     cursor: pointer;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    z-index: 100;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-light);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 0;
+}
+
+.menu-toggle .bar:nth-child(1) {
+    top: 0;
+}
+
+.menu-toggle .bar:nth-child(2) {
+    top: 10px;
+}
+
+.menu-toggle .bar:nth-child(3) {
+    top: 20px;
+}
+
+.menu-toggle[aria-expanded="true"] .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
 }
 
 /* Toast Notification */
@@ -525,6 +562,7 @@ body.acc-readable-font * {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -535,6 +573,7 @@ body.acc-readable-font * {
     from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
     }
@@ -547,21 +586,30 @@ body.acc-readable-font * {
     }
 
     .nav-links {
-        display: none;
+        display: flex;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: rgba(22, 29, 47, 0.95);
+        background-color: rgba(22, 29, 47, 0.98);
         flex-direction: column;
         align-items: center;
-        padding: 1rem 0;
-        gap: 1rem;
+        padding: 2rem 0;
+        gap: 1.5rem;
         backdrop-filter: blur(10px);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.4s ease;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
     .nav-links.active {
-        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
 
     .hero h1 {
