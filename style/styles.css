@@ -12,7 +12,7 @@
     box-sizing: border-box;
 }
 
-/* הגדרת גודל בסיס לטובת הגדלת/הקטנת טקסט */
+
 html {
     font-size: 100%;
     transition: font-size 0.3s;
@@ -27,7 +27,7 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* --- Navigation --- */
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -64,7 +64,7 @@ nav {
     color: var(--accent-gold);
 }
 
-/* --- Hero Section --- */
+
 .hero {
     height: 100vh;
     display: flex;
@@ -112,7 +112,7 @@ nav {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* --- Sections General --- */
+
 section {
     padding: 5rem 10%;
 }
@@ -134,7 +134,7 @@ section {
     margin: 10px auto 0;
 }
 
-/* --- About Section --- */
+
 .about-container {
     display: flex;
     flex-wrap: wrap;
@@ -159,7 +159,7 @@ section {
     color: #aaa;
 }
 
-/* --- Services Section --- */
+
 .services {
     background-color: #121826;
 }
@@ -195,7 +195,7 @@ section {
     font-size: 1.3rem;
 }
 
-/* --- Contact Section --- */
+
 .contact-container {
     display: flex;
     flex-direction: column;
@@ -242,7 +242,7 @@ button[type="submit"]:hover {
     background-color: #c9a572;
 }
 
-/* --- Footer --- */
+
 footer {
     text-align: center;
     padding: 2rem;
@@ -252,7 +252,7 @@ footer {
     border-top: 1px solid #2a3652;
 }
 
-/* --- Animations --- */
+
 .hidden {
     opacity: 0;
     transform: translateY(30px);
@@ -264,9 +264,7 @@ footer {
     transform: translateY(0);
 }
 
-/* =========================================
-    תפריט נגישות - עיצוב הווידג'ט
-    ========================================= */
+
 #acc-widget {
     position: fixed;
     bottom: 20px;
@@ -340,9 +338,9 @@ footer {
     background-color: #e2e2e2;
 }
 
-/* --- מחלקות נגישות לפעולה (משנות את האתר) --- */
 
-/* ניגודיות גבוהה */
+
+
 body.acc-high-contrast {
     background-color: #000 !important;
     color: #fff !important;
@@ -367,7 +365,7 @@ body.acc-high-contrast .logo {
     color: #fff !important;
 }
 
-/* הדגשת קישורים */
+
 body.acc-highlight-links a {
     background-color: yellow !important;
     color: black !important;
@@ -376,13 +374,13 @@ body.acc-highlight-links a {
     padding: 2px;
 }
 
-/* גופן קריא */
+
 body.acc-readable-font * {
     font-family: Arial, Helvetica, sans-serif !important;
     letter-spacing: 1px !important;
 }
 
-/* --- Mobile Responsive --- */
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
