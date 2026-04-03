@@ -73,7 +73,10 @@ nav {
     align-items: center;
     text-align: center;
     padding: 0 20px;
-    background: linear-gradient(rgba(22, 29, 47, 0.7), rgba(22, 29, 47, 0.95)), url('../assets/images/photos/fullart_tp.jpg') center/cover no-repeat;
+    background-image: linear-gradient(rgba(22, 29, 47, 0.7), rgba(22, 29, 47, 0.95)), url('../assets/images/photos/fullart_tp.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
 }
 
