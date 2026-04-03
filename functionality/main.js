@@ -66,3 +66,26 @@ if (reasonText && charCount) {
         charCount.style.color = length >= 200 ? '#ff8e8e' : '#aaa';
     });
 }
+
+// =========================================
+// אבטחת מפתח (Obfuscation)
+// =========================================
+const contactForm = document.querySelector('form[action="https://api.web3forms.com/submit"]');
+if (contactForm) {
+    contactForm.addEventListener('submit', function () {
+        // כדי שבוטים לא יסרקו את מפתח הגישה, הוא לא נמצא בקוד ה-HTML.
+        // במקום זאת, נחלק את המפתח ל-2 חלקים ונרכיב אותו רק כאשר הלקוח לוחץ "שליחה".
+        // לדוגמה, אם המפתח שלך הוא "12345678-abcd", שים חצי למעלה וחצי למטה.
+        const keyPart1 = "a5a933e8-5fa9-4cde-92";
+        const keyPart2 = "ff-bf822f5c2e7d";
+
+        let hiddenKey = document.querySelector('input[name="access_key"]');
+        if (!hiddenKey) {
+            hiddenKey = document.createElement('input');
+            hiddenKey.type = 'hidden';
+            hiddenKey.name = 'access_key';
+            contactForm.appendChild(hiddenKey);
+        }
+        hiddenKey.value = keyPart1 + keyPart2;
+    });
+}
