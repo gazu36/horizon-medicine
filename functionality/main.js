@@ -56,7 +56,9 @@ if (reasonText && charCount) {
 
 const contactForm = document.querySelector('form[action="https://api.web3forms.com/submit"]');
 if (contactForm) {
-    contactForm.addEventListener('submit', function () {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
         const kp1 = "a5a933e8-5fa9-4cde-92";
         const kp2 = "ff-bf822f5c2e7d";
 
@@ -68,5 +70,37 @@ if (contactForm) {
             contactForm.appendChild(hiddenKey);
         }
         hiddenKey.value = kp1 + kp2;
+
+        const formData = new FormData(contactForm);
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'שולח הודעה...';
+        submitBtn.disabled = true;
+
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('הודעתך נשלחה בהצלחה! אני אחזור אליך בהקדם.');
+                    contactForm.reset();
+                    const countDisplay = document.getElementById('char-count');
+                    if (countDisplay) countDisplay.textContent = '0 / 200';
+                } else {
+                    alert('אירעה שגיאה בשליחת ההודעה, אנא נסה שנית.');
+                }
+            })
+            .catch(error => {
+                alert('אירעה בעיית תקשורת, אנא נסה שנית.');
+            })
+            .finally(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
     });
 }
