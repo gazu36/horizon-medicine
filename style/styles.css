@@ -165,8 +165,9 @@ section {
 }
 
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
 }
 
@@ -177,6 +178,8 @@ section {
     text-align: center;
     transition: transform 0.3s;
     border-bottom: 3px solid transparent;
+    flex: 1 1 280px;
+    max-width: 400px;
 }
 
 .service-card:hover {
@@ -401,6 +404,7 @@ body.acc-high-contrast textarea {
     background-color: #000 !important;
     color: #ffcc00 !important;
     border-color: #ffcc00 !important;
+    background-image: none !important;
 }
 
 body.acc-high-contrast h1,
@@ -500,5 +504,9 @@ body.acc-readable-font * {
 
     .about-container {
         flex-direction: column;
+    }
+
+    .about-text {
+        text-align: center;
     }
 }
