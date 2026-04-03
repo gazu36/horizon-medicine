@@ -83,17 +83,22 @@
 
                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-                <input type="text" name="name" placeholder="שם מלא" maxlength="75" pattern="[a-zA-Zא-ת\s\-]+" required
-                    oninvalid="if(this.value==''){this.setCustomValidity('נא למלא שדה זה')}else{this.setCustomValidity('השם יכול להכיל אותיות בלבד')}"
-                    oninput="this.setCustomValidity('')">
-                <input type="tel" name="phone" placeholder="טלפון" style="text-align: right; direction: rtl;"
-                    pattern="^0[0-9]{1,2}[-\s]?[0-9]{7}$" required
-                    oninvalid="if(this.value==''){this.setCustomValidity('נא למלא שדה זה')}else{this.setCustomValidity('יש להזין מספר טלפון הגיוני (9-10 ספרות, מתחיל ב-0)')}"
-                    oninput="this.setCustomValidity('')">
-                <textarea id="reason-text" name="message" rows="5" placeholder="הודעה או סיבת הפנייה"
-                    maxlength="200"></textarea>
+                <div class="input-group">
+                    <input type="text" name="name" placeholder="שם מלא" maxlength="75" pattern="[a-zA-Zא-ת\s\-]+"
+                        required>
+                    <span class="error-msg">אנא הזינו שם תקין (אותיות בלבד)</span>
+                </div>
+                <div class="input-group">
+                    <input type="tel" name="phone" id="phone-input" placeholder="מספר טלפון"
+                        style="text-align: right; direction: ltr;" pattern="^0\d{2}-\d{3}-\d{3,4}$" required>
+                    <span class="error-msg">הפורמט הנדרש: 0XX-XXX-XXXX</span>
+                </div>
+                <div class="input-group" style="margin-bottom: 0;">
+                    <textarea id="reason-text" name="message" rows="5" placeholder="הודעה או סיבת הפנייה"
+                        maxlength="200"></textarea>
+                </div>
                 <div id="char-count"
-                    style="text-align: left; font-size: 0.85rem; color: #aaa; margin-top: -10px; margin-bottom: 5px; padding-left: 5px;">
+                    style="text-align: left; font-size: 0.85rem; color: #aaa; margin-top: -5px; margin-bottom: 10px; padding-left: 5px;">
                     0 / 200</div>
 
                 <button type="submit">שליחת הודעה</button>

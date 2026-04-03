@@ -209,22 +209,67 @@ form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+form.submitting {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.input-group {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 input,
 textarea {
+    width: 100%;
     padding: 15px;
     background-color: var(--card-bg);
     border: 1px solid #33405c;
     color: var(--text-light);
     border-radius: 5px;
     font-family: inherit;
+    transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
 }
 
 input:focus,
 textarea:focus {
     outline: none;
     border-color: var(--accent-gold);
+    box-shadow: 0 0 0 2px rgba(223, 186, 131, 0.2);
+}
+
+input.is-invalid,
+textarea.is-invalid {
+    border-color: #ff4d4d;
+    background-color: rgba(255, 77, 77, 0.05);
+}
+
+input:not(:placeholder-shown):valid,
+textarea:not(:placeholder-shown):valid {
+    border-color: #4CAF50;
+    background-color: rgba(76, 175, 80, 0.05);
+}
+
+.error-msg {
+    color: #ff4d4d;
+    font-size: 0.85rem;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+    text-align: right;
+}
+
+input.is-invalid ~ .error-msg,
+textarea.is-invalid ~ .error-msg {
+    max-height: 20px;
+    opacity: 1;
+    margin-top: 5px;
 }
 
 button[type="submit"] {
@@ -232,6 +277,7 @@ button[type="submit"] {
     background-color: var(--accent-gold);
     border: none;
     font-weight: bold;
+    font-family: inherit;
     color: var(--primary-dark);
     cursor: pointer;
     border-radius: 5px;
@@ -378,6 +424,64 @@ body.acc-highlight-links a {
 body.acc-readable-font * {
     font-family: Arial, Helvetica, sans-serif !important;
     letter-spacing: 1px !important;
+}
+
+
+/* Toast Notification */
+.toast-container {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.toast {
+    background-color: var(--card-bg);
+    color: var(--text-light);
+    padding: 12px 25px;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(223, 186, 131, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideUp 0.4s ease-out forwards, fadeOut 0.4s ease-in 4.6s forwards;
+    font-weight: 500;
+    font-family: inherit;
+    pointer-events: auto;
+}
+
+.toast.success {
+    border-left: 4px solid #4CAF50;
+}
+
+.toast.error {
+    border-left: 4px solid #F44336;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 
