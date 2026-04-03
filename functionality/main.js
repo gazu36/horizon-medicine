@@ -57,8 +57,8 @@ if (reasonText && charCount) {
 const contactForm = document.querySelector('form[action="https://api.web3forms.com/submit"]');
 if (contactForm) {
     contactForm.addEventListener('submit', function () {
-        const keyPart1 = "a5a933e8-5fa9-4cde-92";
-        const keyPart2 = "ff-bf822f5c2e7d";
+        const kp1 = "a5a933e8-5fa9-4cde-92";
+        const kp2 = "ff-bf822f5c2e7d";
 
         let hiddenKey = document.querySelector('input[name="access_key"]');
         if (!hiddenKey) {
@@ -67,6 +67,6 @@ if (contactForm) {
             hiddenKey.name = 'access_key';
             contactForm.appendChild(hiddenKey);
         }
-        hiddenKey.value = keyPart1 + keyPart2;
+        hiddenKey.value = kp1 + kp2;
     });
 }
