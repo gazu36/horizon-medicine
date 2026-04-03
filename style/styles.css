@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --primary-dark: #161d2f;
     --accent-gold: #dfba83;
     --text-light: #f4f4f4;
@@ -73,7 +73,7 @@ nav {
     align-items: center;
     text-align: center;
     padding: 0 20px;
-    background: radial-gradient(circle at center, #232d45 0%, var(--primary-dark) 100%);
+    background: linear-gradient(rgba(22, 29, 47, 0.7), rgba(22, 29, 47, 0.95)), url('../assets/images/photos/fullart_tp.jpg') center/cover no-repeat;
     position: relative;
 }
 
