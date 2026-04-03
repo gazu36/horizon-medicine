@@ -1,0 +1,53 @@
+﻿// אנימציות גלילה מקוריות
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// =========================================
+// פונקציות תפריט הנגישות (JavaScript)
+// =========================================
+const accMenu = document.getElementById('acc-menu');
+const accToggleBtn = document.getElementById('acc-toggle-btn');
+let currentFontSize = 1;
+
+// פתיחה וסגירה של התפריט
+accToggleBtn.addEventListener('click', () => {
+    accMenu.classList.toggle('open');
+});
+
+// פונקציה להגדלה/הקטנה של טקסט
+function accChangeFontSize(step) {
+    currentFontSize += step;
+    // הגבלת הגודל כדי שהאתר לא יישבר
+    if (currentFontSize < 0.8) currentFontSize = 0.8;
+    if (currentFontSize > 1.5) currentFontSize = 1.5;
+    document.documentElement.style.fontSize = (currentFontSize * 100) + '%';
+}
+
+// פונקציה להפעלת/כיבוי מחלקות עיצוב (ניגודיות, פונט, קישורים)
+function accToggleClass(className) {
+    document.body.classList.toggle(className);
+}
+
+// איפוס כל הגדרות הנגישות למצב ברירת המחדל
+function accReset() {
+    document.body.classList.remove('acc-high-contrast', 'acc-highlight-links', 'acc-readable-font');
+    currentFontSize = 1;
+    document.documentElement.style.fontSize = '100%';
+}
