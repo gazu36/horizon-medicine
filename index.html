@@ -8,6 +8,7 @@
         content="קליניקה לרפואה סינית מסורתית. דיקור סיני, צמחי מרפא, מגע וטיפולים מותאמים אישית. החזרת האיזון לגוף ולנפש.">
     <meta name="keywords"
         content="רפואה סינית, דיקור סיני, צמחי מרפא, טווינא, כוסות רוח, מטפל ברפואה סינית, איזון גוף ונפש">
+    <meta name="author" content="אופק אזולאי">
     <title>אופק - רפואה סינית</title>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
 
@@ -47,7 +48,7 @@
             <h2 class="section-title hidden">הגישה שלי</h2>
             <div class="about-container">
                 <div class="about-image hidden">
-                    <span>תמונה של אופק</span>
+                    <img src="assets/images/photos/ofek_close_cropped.png" alt="אופק אזולאי - מטפל ברפואה סינית">
                 </div>
                 <div class="about-text hidden">
                     <h3>שלום, שמי אופק</h3>
@@ -86,38 +87,23 @@
         <section id="contact">
             <h2 class="section-title hidden">בואו נדבר</h2>
             <div class="contact-container hidden">
-                <p class="contact-subtitle">השאירו פרטים ואחזור אליכם בהקדם לתיאום תור.</p>
-                <form action="https://api.web3forms.com/submit" method="POST">
-
-                    <input type="checkbox" name="botcheck" class="hidden botcheck-input">
-
-                    <div class="input-group">
-                        <input type="text" name="name" placeholder="שם מלא" maxlength="75" pattern="[a-zA-Zא-ת\s\-]+"
-                            required>
-                        <span class="error-msg">אנא הזינו שם תקין (אותיות בלבד)</span>
-                    </div>
-                    <div class="input-group">
-                        <input type="tel" name="phone" id="phone-input" class="phone-input" placeholder="מספר טלפון"
-                            pattern="^0\d{2}-\d{3}-\d{3,4}$" required>
-                        <span class="error-msg">הפורמט הנדרש: 0XX-XXX-XXXX</span>
-                    </div>
-                    <div class="input-group no-margin">
-                        <textarea id="reason-text" name="message" rows="5" placeholder="הודעה או סיבת הפנייה"
-                            maxlength="200"></textarea>
-                    </div>
-                    <div id="char-count" class="char-count">
-                        0 / 200</div>
-
-                    <button type="submit">שליחת הודעה</button>
-                </form>
+                <p class="contact-subtitle">לתיאום תור וייעוץ אישי, מוזמנים ליצור קשר ישירות ב-WhatsApp:</p>
+                <a href="https://wa.link/mm4wlg" class="btn contact-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+                    שליחת הודעה ב-WhatsApp 💬
+                </a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 רפואה סינית מסורתית. כל הזכויות שמורות.</p>
-        <p>רחוב הריפוי 10, תל אביב</p>
+        <p>© 2026 Horizon TCM. כל הזכויות שמורות.</p>
     </footer>
+
+    <a href="https://wa.link/mm4wlg" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="שלח הודעה ב-WhatsApp" title="WhatsApp">
+        <svg viewBox="0 0 448 512" width="30" height="30" fill="currentColor">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.3 5.7 23.6 9.2 31.7 11.8 13.8 4.4 26.3 3.8 36.3 2.3 11-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
 
     <div id="acc-widget">
         <button id="acc-toggle-btn" aria-label="פתיחת תפריט נגישות" title="נגישות">♿</button>
@@ -133,7 +119,7 @@
     </div>
 
     <div id="toast-container" class="toast-container"></div>
-    <script src="functionality/main.js" defer></script>
+    <script src="functionality/main.js?v=1.0.1" defer></script>
 </body>
 
 </html>

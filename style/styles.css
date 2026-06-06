@@ -152,7 +152,7 @@ section {
 .about-image {
     flex: 1;
     min-width: 300px;
-    height: 400px;
+    height: 500px;
     background-color: var(--border-color);
     border: 2px solid var(--accent-gold);
     border-radius: 10px;
@@ -160,6 +160,15 @@ section {
     align-items: center;
     justify-content: center;
     color: #aaa;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 
@@ -208,6 +217,24 @@ section {
     align-items: center;
     max-width: 600px;
     margin: 0 auto;
+}
+
+.contact-whatsapp-btn {
+    background-color: #25D366;
+    border-color: #25D366;
+    color: #fff;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    padding: 14px 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-whatsapp-btn:hover {
+    background-color: transparent;
+    color: #25D366;
+    border-color: #25D366;
 }
 
 form {
@@ -316,6 +343,72 @@ footer {
     transform: translateY(0);
 }
 
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #20ba5a;
+}
+
+.whatsapp-float svg {
+    width: 30px;
+    height: 30px;
+    display: block;
+    fill: currentColor;
+    transition: fill 0.3s;
+}
+
+/* Pulse Animation (Premium Touch) */
+.whatsapp-float::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #25D366;
+    opacity: 0.4;
+    z-index: -1;
+    animation: whatsapp-pulse 2s infinite;
+}
+
+@keyframes whatsapp-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* High Contrast Override for WhatsApp Button */
+body.acc-high-contrast .whatsapp-float {
+    background-color: #000 !important;
+    color: #ffcc00 !important;
+    border: 2px solid #ffcc00 !important;
+}
+
+body.acc-high-contrast .whatsapp-float::after {
+    display: none;
+}
 
 #acc-widget {
     position: fixed;
