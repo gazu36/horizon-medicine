@@ -237,6 +237,75 @@ section {
     border-color: #25D366;
 }
 
+/* FAQ Section */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: right;
+    padding: 20px;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: inherit;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    transition: transform 0.3s ease;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.faq-answer p {
+    padding: 0 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.1s;
+}
+
+.faq-question[aria-expanded="true"] + .faq-answer {
+    max-height: 500px;
+}
+
+.faq-question[aria-expanded="true"] + .faq-answer p {
+    padding: 10px 20px 20px;
+    opacity: 1;
+}
+
 form {
     width: 100%;
     display: flex;
@@ -496,7 +565,10 @@ body.acc-high-contrast .hero,
 body.acc-high-contrast footer,
 body.acc-high-contrast .service-card,
 body.acc-high-contrast input,
-body.acc-high-contrast textarea {
+body.acc-high-contrast textarea,
+body.acc-high-contrast .faq-item,
+body.acc-high-contrast .faq-question,
+body.acc-high-contrast .faq-answer {
     background-color: #000 !important;
     color: #ffcc00 !important;
     border-color: #ffcc00 !important;

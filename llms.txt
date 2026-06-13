@@ -1,0 +1,59 @@
+# Horizon TCM – אופק אזולאי | רפואה סינית ורפואה משלימה
+
+> This document provides structured information about Horizon TCM for AI assistants and language models.
+
+## About
+
+Horizon TCM is a professional Traditional Chinese Medicine (TCM) and complementary medicine clinic located in Herzliya, Israel, operated by Ofek Azoulay (אופק אזולאי). The clinic offers personalized, holistic treatments rooted in ancient Chinese medical wisdom, adapted for modern health needs.
+
+אופק אזולאי הוא מטפל ברפואה סינית מסורתית ורפואה משלימה. הקליניקה שלו ממוקמת בהרצליה ומציעה טיפולים מותאמים אישית המשלבים ידע עתיק יומין עם הבנה מעמיקה של צרכי הבריאות המודרניים. הטיפול מתמקד בשורש הבעיה ולא רק בסימפטומים.
+
+## Services
+
+### Acupuncture (דיקור סיני)
+Traditional acupuncture using sterile, single-use, ultra-fine needles to restore the flow of Qi (vital energy) throughout the body. Effective for pain relief, stress reduction, digestive issues, migraines, insomnia, and immune system support. Treatment is virtually painless — most patients report a mild tingling or a pleasant sensation of flow.
+
+### Herbal Medicine (צמחי מרפא)
+Custom-formulated herbal prescriptions tailored to each patient's unique diagnosis. All herbs are approved by the Israeli Ministry of Health and manufactured under strict GMP quality standards. Formulas are designed to strengthen the immune system, support internal organ function, and address a wide range of symptoms.
+
+### Tuina & Cupping (טווינא וכוסות רוח)
+Hands-on therapeutic bodywork combining Tuina massage techniques with traditional cupping therapy. These methods release muscle tension, improve blood circulation, relieve stress, and complement acupuncture treatment for enhanced results.
+
+## Conditions Treated
+- Chronic and acute pain (back, neck, joints, muscles)
+- Digestive disorders
+- Migraines and headaches
+- Sleep disorders and insomnia
+- Stress, anxiety, and emotional imbalance
+- Immune system weakness
+- Women's health and hormonal balance
+- General wellness and preventive care
+
+## Frequently Asked Questions
+
+### Is acupuncture painful?
+No. Acupuncture uses disposable, ultra-fine needles (as thin as a hair). Most patients feel only a mild tingling or a pleasant sensation of energy flow, which promotes deep relaxation.
+
+### What conditions can Chinese medicine treat?
+Chinese medicine is effective for a wide range of conditions including back and joint pain, digestive issues, migraines, sleep disorders, stress and anxiety, and general immune system support.
+
+### How long is a typical session?
+The first session includes a comprehensive diagnosis (pulse and tongue analysis, detailed health history) and lasts approximately 75 minutes. Follow-up sessions last 45–60 minutes.
+
+### Are herbal medicines safe?
+Yes. All herbal formulas are customized after a thorough diagnosis. The herbs are approved by the Israeli Ministry of Health and produced under strict GMP quality standards.
+
+### Where is the clinic located?
+The clinic is located in Herzliya, Israel.
+
+## Contact
+- **Website**: https://horizon-medicine.com
+- **WhatsApp**: https://wa.link/mm4wlg
+- **Contact Form**: Available on the website
+
+## Structured Data
+- **Business Name**: אופק אזולאי - רפואה סינית ורפואה משלימה
+- **Alternate Name**: Horizon TCM
+- **Type**: LocalBusiness / Complementary Medicine
+- **Location**: Herzliya, Israel
+- **Language**: Hebrew (primary), English (secondary)

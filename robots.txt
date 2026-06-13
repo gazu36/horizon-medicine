@@ -1,0 +1,29 @@
+# Horizon Medicine - Robots.txt
+# Welcome all crawlers and AI agents
+
+User-agent: *
+Allow: /
+
+# AI Search Agents
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://horizon-medicine.com/sitemap.xml
