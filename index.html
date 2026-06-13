@@ -1,139 +1,15 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="קליניקה לרפואה סינית מסורתית. דיקור סיני, צמחי מרפא, מגע וטיפולים מותאמים אישית. החזרת האיזון לגוף ולנפש.">
-    <meta name="keywords"
-        content="רפואה סינית, דיקור סיני, צמחי מרפא, טווינא, כוסות רוח, מטפל ברפואה סינית, איזון גוף ונפש">
-    <title>אופק - רפואה סינית</title>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
-
-    <link rel="icon" type="image/svg+xml" href="assets/images/icons/white_tp.svg">
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.web3forms.com; form-action 'self' https://api.web3forms.com; frame-src 'none';">
-    <link rel="stylesheet" href="style/styles.css">
+    <title>Coming Soon</title>
 </head>
 
-<body>
-
-    <nav>
-        <a href="#" class="logo">
-            <img src="assets/images/icons/white_tp.svg" alt="רפואה סינית לוגו" class="logo-img">
-        </a>
-        <button id="menu-toggle" class="menu-toggle" aria-label="תפריט" aria-expanded="false">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="#about">אודות</a></li>
-            <li><a href="#services">טיפולים</a></li>
-            <li><a href="#contact">צור קשר</a></li>
-        </ul>
-    </nav>
-
-    <header class="hero">
-        <h1 class="hidden">איזון הגוף, הרגעת הנפש</h1>
-        <p class="hidden">רפואה סינית מסורתית המותאמת לאורח החיים המודרני. דיקור, צמחי מרפא ותזונה לחיים בריאים יותר.
-        </p>
-        <a href="#contact" class="btn hidden">צעד ראשון לאיזון</a>
-    </header>
-
-    <main>
-        <section id="about">
-            <h2 class="section-title hidden">הגישה שלי</h2>
-            <div class="about-container">
-                <div class="about-image hidden">
-                    <span>תמונה של אופק</span>
-                </div>
-                <div class="about-text hidden">
-                    <h3>שלום, שמי אופק</h3>
-                    <br>
-                    <p>כמטפל ברפואה סינית, אני מאמין ביכולת הטבעית של הגוף לרפא את עצמו. בקליניקה שלי אני משלב ידע עתיק
-                        יומין עם הבנה מעמיקה של הצרכים המודרניים.</p>
-                    <br>
-                    <p>הטיפול מתמקד בשורש הבעיה ולא רק בסימפטומים, תוך שימוש בדיקור, צמחי מרפא והנחיות תזונה מותאמות
-                        אישית.
-                        המטרה שלי היא לעזור לך להחזיר את האיזון לחייך ולהרגיש במיטבך.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="services">
-            <h2 class="section-title hidden">סוגי טיפולים</h2>
-            <div class="services-grid">
-                <div class="service-card hidden">
-                    <div class="service-icon">✦</div>
-                    <h3>דיקור סיני (Acupuncture)</h3>
-                    <p>שימוש במחטים עדינות לאיזון זרימת הצ'י בגוף, הקלה על כאבים וטיפול בבעיות פנימיות.</p>
-                </div>
-                <div class="service-card hidden">
-                    <div class="service-icon">🌿</div>
-                    <h3>צמחי מרפא</h3>
-                    <p>פורמולות צמחים המותאמות אישית לחיזוק המערכת החיסונית וטיפול במגוון רחב של סימפטומים.</p>
-                </div>
-                <div class="service-card hidden">
-                    <div class="service-icon">☯</div>
-                    <h3>טווינא וכוסות רוח</h3>
-                    <p>טיפולי מגע ושיטות מסורתיות לשחרור שרירים תפוסים, הזרמת דם והפגת מתחים.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2 class="section-title hidden">בואו נדבר</h2>
-            <div class="contact-container hidden">
-                <p class="contact-subtitle">השאירו פרטים ואחזור אליכם בהקדם לתיאום תור.</p>
-                <form action="https://api.web3forms.com/submit" method="POST">
-
-                    <input type="checkbox" name="botcheck" class="hidden botcheck-input">
-
-                    <div class="input-group">
-                        <input type="text" name="name" placeholder="שם מלא" maxlength="75" pattern="[a-zA-Zא-ת\s\-]+"
-                            required>
-                        <span class="error-msg">אנא הזינו שם תקין (אותיות בלבד)</span>
-                    </div>
-                    <div class="input-group">
-                        <input type="tel" name="phone" id="phone-input" class="phone-input" placeholder="מספר טלפון"
-                            pattern="^0\d{2}-\d{3}-\d{3,4}$" required>
-                        <span class="error-msg">הפורמט הנדרש: 0XX-XXX-XXXX</span>
-                    </div>
-                    <div class="input-group no-margin">
-                        <textarea id="reason-text" name="message" rows="5" placeholder="הודעה או סיבת הפנייה"
-                            maxlength="200"></textarea>
-                    </div>
-                    <div id="char-count" class="char-count">
-                        0 / 200</div>
-
-                    <button type="submit">שליחת הודעה</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2026 רפואה סינית מסורתית. כל הזכויות שמורות.</p>
-        <p>רחוב הריפוי 10, תל אביב</p>
-    </footer>
-
-    <div id="acc-widget">
-        <button id="acc-toggle-btn" aria-label="פתיחת תפריט נגישות" title="נגישות">♿</button>
-        <div id="acc-menu" role="dialog" aria-label="אפשרויות נגישות">
-            <h4>תפריט נגישות</h4>
-            <button class="acc-option-btn" onclick="accChangeFontSize(0.1)">הגדלת טקסט ➕</button>
-            <button class="acc-option-btn" onclick="accChangeFontSize(-0.1)">הקטנת טקסט ➖</button>
-            <button class="acc-option-btn" onclick="accToggleClass('acc-high-contrast')">ניגודיות גבוהה 🌗</button>
-            <button class="acc-option-btn" onclick="accToggleClass('acc-highlight-links')">הדגשת קישורים 🔗</button>
-            <button class="acc-option-btn" onclick="accToggleClass('acc-readable-font')">גופן קריא 🔤</button>
-            <button class="acc-option-btn acc-reset-btn" onclick="accReset()">איפוס הגדרות 🔄</button>
-        </div>
-    </div>
-
-    <div id="toast-container" class="toast-container"></div>
-    <script src="functionality/main.js" defer></script>
+<body
+    style="margin:0; display:flex; height:100vh; justify-content:center; align-items:center; font-family:Arial, sans-serif;">
+    <h1>Coming Soon</h1>
 </body>
 
 </html>
